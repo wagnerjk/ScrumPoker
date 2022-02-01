@@ -1,3 +1,4 @@
+// @dart=2.9
 import 'package:flutter/material.dart';
 
 Text text(String texto, {double fontSize = 16, color = Colors.black, bold = false}) {

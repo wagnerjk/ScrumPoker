@@ -1,3 +1,4 @@
+// @dart=2.9
 import 'package:flutter/material.dart';
 
 Future push(BuildContext context, Widget page, {bool replace = false,}) {

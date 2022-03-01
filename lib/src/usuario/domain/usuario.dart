@@ -17,22 +17,6 @@ class Usuario {
     this.senha,
   });
 
-  Usuario copyWith({
-    String? nome,
-    String? email,
-    String? hash,
-    String? urlFoto,
-    String? senha,
-  }) {
-    return Usuario(
-      nome: nome ?? this.nome,
-      email: email ?? this.email,
-      hash: hash ?? this.hash,
-      urlFoto: urlFoto ?? this.urlFoto,
-      senha: senha ?? this.senha,
-    );
-  }
-
   Map<String, dynamic> toMap() {
     return {
       'nome': nome,

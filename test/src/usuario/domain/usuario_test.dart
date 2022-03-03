@@ -52,14 +52,14 @@ void main() {
     expect(usuarioCriado.senha!.isNotEmpty, true);
   });
   test('DEVE retornar um objeto Usuario quando realizar a conversão através do fromJson', () async {
-    final mapUsuario = {
+    final jsonUsuario = {
       'nome': 'Teste',
       'email': 'teste@teste.com',
       'urlFoto': 'http://www.teste.com/teste.png',
       'hash': '123456abcdef',
       'senha': '123456',
     };
-    final usuarioCriado = Usuario.fromJson(jsonEncode(mapUsuario));
+    final usuarioCriado = Usuario.fromJson(jsonEncode(jsonUsuario));
     expect(usuarioCriado, isA<Usuario>());
     expect(usuarioCriado.nome.isNotEmpty, true);
     expect(usuarioCriado.email.isNotEmpty, true);

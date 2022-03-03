@@ -13,4 +13,4 @@ ECHO Gerando HTML a partir do lcov.info
 CALL perl %GENHTML% -o coverage\html coverage\lcov.info
 ECHO Abrindo relatório no navegador
 CALL coverage\html\index.html
-PAUSE
+REM PAUSE

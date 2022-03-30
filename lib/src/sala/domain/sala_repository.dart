@@ -6,4 +6,5 @@ abstract class SalaRepository {
   Future<void> cadastrarSala(Sala sala);
   Future<void> apagarSala(Sala sala);
   Future<List<Sala>> getTodasSalas();
+  Future<void> utilizarConvite(String hashSala, String hashUsuario);
 }

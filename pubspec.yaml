@@ -24,6 +24,7 @@ dependencies:
   share: ^2.0.1
   responsive_grid: ^1.2.1+1
   cached_network_image: ^2.3.3
+  auth_buttons: ^2.0.4
 dev_dependencies:
   flutter_test:
     sdk: flutter

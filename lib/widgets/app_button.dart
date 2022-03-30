@@ -1,13 +1,17 @@
-// @dart=2.9
 import 'package:flutter/material.dart';
 
 class AppButton extends StatelessWidget {
   final String label;
-  final Function onPressed;
+  final void Function()? onPressed;
   final bool showProgress;
   final bool disabled;
 
-  AppButton(this.label, {this.onPressed, this.showProgress = false, this.disabled = false});
+  AppButton(
+    this.label, {
+    this.onPressed,
+    this.showProgress = false,
+    this.disabled = false,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +33,7 @@ class AppButton extends StatelessWidget {
               ),
             ),
       // color: Colors.blue,
-      onPressed: disabled == false ? onPressed : null,
+      onPressed: disabled == true ? null : onPressed,
     );
   }
 }

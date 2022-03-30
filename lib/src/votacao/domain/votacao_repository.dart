@@ -7,4 +7,6 @@ abstract class VotacaoRepository {
   Future<void> excluirVotacao(String hashSala, String hashUsuario);
   Future<bool> verificaSeTodosDaSalaVotaram(String hashSala);
   Future<void> resetarVotacoes(String hashSala);
+  Future<void> votar(String hashSala, String hashUsuario, int nota);
+  Future<void> contabilizaVotacoes(String hashSala);
 }

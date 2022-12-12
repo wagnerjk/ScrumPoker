@@ -26,6 +26,7 @@ dependencies:
   flutter_speed_dial: ^6.2.0
   google_sign_in_web: ^0.10.2
   flutter_native_splash: ^2.2.16
+  flutter_svg: ^1.1.6
 dev_dependencies:
   flutter_lints: ^2.0.1
   flutter_test:
@@ -36,6 +37,7 @@ flutter:
   uses-material-design: true
   assets:
     - assets/imagens/
+    - assets/imagens/cartas/
   fonts:
     - family: Pacifico
       fonts:

@@ -2,6 +2,7 @@
 import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
+import 'package:scrumpoker/models/cartas_enum.dart';
 
 /// Classe que representa o modelo da entidade Sala
 class Sala {
@@ -9,6 +10,7 @@ class Sala {
   String hashCriador;
   List<String> hashsParticipantes;
   bool votacaoConcluida;
+  List<CartasEnum> cartasSala;
 
   /// Construtor
   Sala({
@@ -16,6 +18,7 @@ class Sala {
     this.hashCriador,
     this.hashsParticipantes,
     this.votacaoConcluida,
+    this.cartasSala,
   });
 
   Sala copyWith({
@@ -23,12 +26,14 @@ class Sala {
     String hashCriador,
     List<String> hashsParticipantes,
     bool votacaoConcluida,
+    List<CartasEnum> cartasSala,
   }) {
     return Sala(
       descricao: descricao ?? this.descricao,
       hashCriador: hashCriador ?? this.hashCriador,
       hashsParticipantes: hashsParticipantes ?? this.hashsParticipantes,
       votacaoConcluida: votacaoConcluida ?? this.votacaoConcluida,
+      cartasSala: cartasSala ?? this.cartasSala,
     );
   }
 
@@ -38,6 +43,7 @@ class Sala {
       'hashCriador': hashCriador,
       'hashsParticipantes': hashsParticipantes,
       'votacaoConcluida': votacaoConcluida,
+      'cartasSala': cartasSala.map((carta) => carta.numero).toList(),
     };
   }
 
@@ -49,6 +55,9 @@ class Sala {
       hashCriador: map['hashCriador'],
       hashsParticipantes: List<String>.from(map['hashsParticipantes']),
       votacaoConcluida: map['votacaoConcluida'],
+      cartasSala: map['cartasSala'] != null
+          ? (map['cartasSala'] as List).map((e) => CartasEnum.values.firstWhere((c) => c.numero == e)).toList()
+          : <CartasEnum>[],
     );
   }
 
@@ -58,7 +67,7 @@ class Sala {
 
   @override
   String toString() {
-    return 'Sala(descricao: $descricao, hashCriador: $hashCriador, hashsParticipantes: $hashsParticipantes, votacaoConcluida: $votacaoConcluida)';
+    return 'Sala(descricao: $descricao, hashCriador: $hashCriador, hashsParticipantes: $hashsParticipantes, votacaoConcluida: $votacaoConcluida, cartasSala: $cartasSala)';
   }
 
   @override
@@ -69,14 +78,12 @@ class Sala {
         other.descricao == descricao &&
         other.hashCriador == hashCriador &&
         listEquals(other.hashsParticipantes, hashsParticipantes) &&
-        other.votacaoConcluida == votacaoConcluida;
+        other.votacaoConcluida == votacaoConcluida &&
+        listEquals(other.cartasSala, cartasSala);
   }
 
   @override
   int get hashCode {
-    return descricao.hashCode ^
-        hashCriador.hashCode ^
-        hashsParticipantes.hashCode ^
-        votacaoConcluida.hashCode;
+    return descricao.hashCode ^ hashCriador.hashCode ^ hashsParticipantes.hashCode ^ votacaoConcluida.hashCode ^ cartasSala.hashCode;
   }
 }

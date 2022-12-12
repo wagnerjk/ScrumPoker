@@ -6,6 +6,7 @@ import 'package:scrumpoker/models/provider_app.dart';
 import 'package:scrumpoker/models/sala.dart';
 import 'package:scrumpoker/models/usuario.dart';
 import 'package:scrumpoker/models/votacao.dart';
+import 'package:scrumpoker/pages/home/sala_votacao_page.dart';
 import 'package:scrumpoker/pages/home/votacao_page.dart';
 import 'package:scrumpoker/services/firebase_service.dart';
 import 'package:scrumpoker/utils/nav.dart';
@@ -199,7 +200,7 @@ class CardSalaDashboard extends StatelessWidget {
     // Chama a tela de votação
     push(
       context,
-      VotacaoPage(snapshotSala: snapshotSalaSelecionada),
+      SalaVotacaoPage(snapshotSala: snapshotSalaSelecionada),
     );
   }
 }
